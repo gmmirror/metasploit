@@ -82,14 +82,6 @@ EOF
 exec proot-distro login metasploit -- msfvenom "${@}"
 EOF
     command chmod +x "${PREFIX}/bin/msfvenom"
-
-    command cat > \
-        "${PREFIX}/bin/metasploit-for-termux" \
-        << 'EOF'
-#!/usr/bin/env bash
-exec proot-distro login metasploit -- msfconsole "${@}"
-EOF
-    command chmod +x "${PREFIX}/bin/metasploit-for-termux"
 }
 
 if [[ -d "${PREFIX}/var/lib/proot-distro/installed-rootfs/debian" ]]; then
